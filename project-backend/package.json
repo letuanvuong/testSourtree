@@ -1,0 +1,38 @@
+{
+  "name": "project-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:server:once && npm-run-all --parallel nodemon:prod watch:server",
+    "build:server:once": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "watch:server": "cross-env NODE_ENV=development webpack --inline --progress --config webpack.config.js --watch",
+    "nodemon:prod": "cross-env NODE_ENV=development nodemon --inspect build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "config": "^3.0.1",
+    "hapi": "^17.8.4",
+    "hapi-pino": "^5.4.1",
+    "hapi-swagger": "^9.4.1",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1",
+    "joi-objectid": "^2.0.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.19",
+    "mongoose-paginate": "^5.0.3",
+    "vision": "^5.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
